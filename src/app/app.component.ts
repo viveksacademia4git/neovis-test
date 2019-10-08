@@ -33,9 +33,10 @@ export class AppComponent implements OnInit {
         initial_cypher: 'MATCH (n)-[r:INTERACTS]->(m) RETURN n,r,m'
     };
 
-    viz = new NeoVis(this.config);
+    viz: NeoVis;
 
     ngOnInit(): void {
+        this.viz = new NeoVis(this.config);
         this.viz.render();
     }
 }
